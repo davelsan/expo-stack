@@ -8,7 +8,7 @@ import { ThemeProvider } from '@theme/Provider';
 
 export default function RootLayout() {
   return (
-    <KeyboardProvider navigationBarTranslucent statusBarTranslucent enabled>
+    <KeyboardProvider>
       <ThemeProvider>
         <Stack>
           <Stack.Screen name="index" options={{ headerShown: false }} />
