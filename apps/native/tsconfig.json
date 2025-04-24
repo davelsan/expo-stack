@@ -3,16 +3,15 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "@/*": [ "./*" ],
       "@assets/*": [ "./assets/*" ],
+      "@components/*": [ "./components/*" ],
       "@features/*": [ "./features/*" ],
-      "@forms/*": [ "./components/forms/*" ],
+      "@forms/*": [ "./forms/*" ],
       "@helpers/*": [ "./helpers/*" ],
       "@hooks/*": [ "./hooks/*" ],
       "@state/*": [ "./state/*" ],
       "@theme/*": [ "./theme/*" ],
-      "@typography/*": [ "./components/typography/*" ],
-      "@ui/*": [ "./components/ui/*" ],
+      "@typography/*": [ "./typography/*" ],
       "@utils/*": [ "./utils/*" ],
     }
   },

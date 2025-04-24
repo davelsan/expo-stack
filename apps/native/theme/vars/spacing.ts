@@ -1,8 +1,8 @@
 export const spacing = {
-  xs: 6,
-  sm: 8,
-  md: 12,
-  lg: 18,
-  xl: 24,
+  xs: 5,
+  sm: 10,
+  md: 15,
+  lg: 20,
+  xl: 30,
   '2xl': 40,
 };

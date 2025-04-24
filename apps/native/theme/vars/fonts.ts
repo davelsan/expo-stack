@@ -1,65 +1,52 @@
+import { Platform } from 'react-native';
+
 export type Mono = {
   family: 'SpaceMono';
-  face: '400Regular';
+  face: 'Regular';
 };
 
 export type Sans = {
   family: 'Nunito';
-  face:
-    | '900Black'
-    | '700Bold'
-    | '600SemiBold'
-    | '500Medium'
-    | '400Regular'
-    | '300Light';
+  face: 'Black' | 'Bold' | 'SemiBold' | 'Medium' | 'Regular' | 'Light';
 };
 
-export type FontFace = Mono | Sans;
+export type Font = Mono | Sans;
+export type FontFamily = Font['family'];
+export type ExtractFace<Family extends Font['family']> = Family extends 'Nunito'
+  ? Sans['face']
+  : Mono['face'];
 
-export function fontFace(font: FontFace) {
-  return `${font.family}_${font.face}`;
-}
-
-export const fontSizes = {
-  h1: 38,
-  h2: 32,
-  h3: 25,
-  h4: 21,
-  body1: 18,
-  body2: 16,
-  body3: 12,
-  body4: 9,
-  //
-  button: 18,
-  menu: 21,
-};
-
-export const fontWeights = {
-  light: 300,
-  regular: 400,
-  medium: 500,
-  semibold: 600,
-  bold: 700,
-} as const;
-
-export function lineHeight(
-  fontSize: number,
-  mod: 'base' | 'md' | 'lg' | 'xl' = 'base'
+export function font<Family extends FontFamily>(
+  family: Family,
+  face: ExtractFace<Family>
 ) {
-  let value = 0.725;
-  switch (mod) {
-    case 'base':
-      value = 0.725;
-      break;
-    case 'md':
-      value = 0.85;
-      break;
-    case 'lg':
-      value = 1;
-      break;
-    case 'xl':
-      value = 1.25;
-      break;
+  const fontFace = faces?.[face];
+  if (!fontFace) {
+    return;
   }
-  return fontSize + 16 * value;
+  return family + fontFace;
 }
+
+/**
+ * Platform-specific font naming.
+ * @see https://docs.expo.dev/develop/user-interface/fonts/#use-google-fonts
+ * @see https://github.com/expo/expo/issues/26540
+ */
+const faces = Platform.select({
+  android: {
+    Black: '_900Black',
+    Bold: '_700Bold',
+    SemiBold: '_600SemiBold',
+    Medium: '_500Medium',
+    Regular: '_400Regular',
+    Light: '_300Light',
+  },
+  ios: {
+    Black: '-Black',
+    Bold: '-Bold',
+    SemiBold: '-SemiBold',
+    Medium: '-Medium',
+    Regular: '-Regular',
+    Light: '-Light',
+  },
+} as const);

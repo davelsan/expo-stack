@@ -1,34 +1,35 @@
-import { PropsWithChildren } from 'react';
-import { useStyles } from 'react-native-unistyles';
-import {
-  Theme as RNTheme,
-  ThemeProvider as RNThemeProvider,
-} from '@react-navigation/native';
-import { useColorScheme } from 'react-native';
+import { ThemeProvider as RNThemeProvider } from '@react-navigation/native';
 
-// This is necessary to initialize the UniStylesRegistry.
-import './themes';
+import { withUnistyles } from 'react-native-unistyles';
 
-/**
- * Compose the base colors for the built-in components.
- */
-function useRNTheme(): RNTheme {
-  const colorScheme = useColorScheme();
-  const { theme } = useStyles();
-  return {
-    dark: colorScheme === 'dark',
-    colors: {
-      primary: theme.colors.grayTextContrast, // tabbar active text / icon color
-      text: theme.colors.grayText, // tabbar inactive text / icon color
-      card: theme.colors.grayBase, // tabbar background
-      background: theme.colors.grayBase,
-      border: theme.colors.accentBorder, // tabbar top border
-      notification: theme.colors.accentSolid,
+export const ThemeProvider = withUnistyles(RNThemeProvider, (theme, rt) => ({
+  value: {
+    dark: rt.themeName === 'dark',
+    fonts: {
+      heavy: {
+        fontFamily: theme.font('Nunito', '900Black'),
+        fontWeight: '900' as const,
+      },
+      bold: {
+        fontFamily: theme.font('Nunito', '700Bold'),
+        fontWeight: '700' as const,
+      },
+      medium: {
+        fontFamily: theme.font('Nunito', '500Medium'),
+        fontWeight: '500' as const,
+      },
+      regular: {
+        fontFamily: theme.font('Nunito', '400Regular'),
+        fontWeight: '400' as const,
+      },
     },
-  };
-}
-
-export function ThemeProvider({ children }: PropsWithChildren) {
-  const rnTheme = useRNTheme();
-  return <RNThemeProvider value={rnTheme}>{children}</RNThemeProvider>;
-}
+    colors: {
+      background: theme.colors.grayBase,
+      border: theme.colors.accentBorder,
+      card: theme.colors.grayBase,
+      notification: theme.colors.accentSolid,
+      primary: theme.colors.grayTextContrast,
+      text: theme.colors.grayText,
+    },
+  },
+}));
