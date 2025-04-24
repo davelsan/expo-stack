@@ -2,14 +2,31 @@ const { defineConfig } = require('eslint/config');
 const expoConfig = require('eslint-config-expo/flat');
 const globals = require('globals');
 
-// https://docs.expo.dev/guides/using-eslint/
-// https://github.com/expo/expo/tree/main/packages/eslint-config-expo/utils
-// https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/order.md
 module.exports = defineConfig([
+  /**
+   * Global ignores
+   * https://eslint.org/docs/latest/use/configure/ignore#ignoring-files
+   */
+  {
+    ignores: [
+      // compiled project
+      'dist/*',
+      // static assets folder
+      'public/*',
+    ],
+  },
+  /**
+   * Expo config
+   * https://docs.expo.dev/guides/using-eslint/
+   * https://github.com/expo/expo/tree/main/packages/eslint-config-expo/utils
+   */
   expoConfig,
-  // Custom project rules.
+  /**
+   * Custom project rules
+   */
   {
     rules: {
+      // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/order.md
       'import/order': [
         'warn',
         {
@@ -26,10 +43,14 @@ module.exports = defineConfig([
         },
       ],
 
+      // Disable empty interface warnings in module augmentation
       '@typescript-eslint/no-empty-object-type': 'off',
     },
   },
-  // Jest support in test files.
+  /**
+   * Configure Jest globals in relevant files.
+   * https://eslint.org/docs/latest/use/configure/language-options#predefined-global-variables
+   */
   {
     files: ['**/*.test.{ts,tsx}', '**/jest.setup.js'],
     languageOptions: {
