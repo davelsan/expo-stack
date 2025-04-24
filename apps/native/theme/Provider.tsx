@@ -1,5 +1,4 @@
 import { ThemeProvider as RNThemeProvider } from '@react-navigation/native';
-
 import { withUnistyles } from 'react-native-unistyles';
 
 export const ThemeProvider = withUnistyles(RNThemeProvider, (theme, rt) => ({
@@ -7,19 +6,19 @@ export const ThemeProvider = withUnistyles(RNThemeProvider, (theme, rt) => ({
     dark: rt.themeName === 'dark',
     fonts: {
       heavy: {
-        fontFamily: theme.font('Nunito', '900Black'),
+        fontFamily: theme.font('Nunito', 'Black')!,
         fontWeight: '900' as const,
       },
       bold: {
-        fontFamily: theme.font('Nunito', '700Bold'),
+        fontFamily: theme.font('Nunito', 'Bold')!,
         fontWeight: '700' as const,
       },
       medium: {
-        fontFamily: theme.font('Nunito', '500Medium'),
+        fontFamily: theme.font('Nunito', 'Medium')!,
         fontWeight: '500' as const,
       },
       regular: {
-        fontFamily: theme.font('Nunito', '400Regular'),
+        fontFamily: theme.font('Nunito', 'Regular')!,
         fontWeight: '400' as const,
       },
     },
