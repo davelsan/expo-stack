@@ -2,12 +2,12 @@ import type { ConfigContext, ExpoConfig } from '@expo/config';
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
-  name: 'X Stack',
-  slug: 'x-stack',
+  name: 'Expo Stack',
+  slug: 'xstack',
   version: '0.1.0',
   orientation: 'portrait',
   icon: './assets/images/icon.png',
-  scheme: 'com.davelsan.xstack',
+  scheme: 'com.anonymous.xstack',
   userInterfaceStyle: 'automatic',
   newArchEnabled: true,
   splash: {
@@ -17,14 +17,14 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   ios: {
     supportsTablet: false,
-    bundleIdentifier: 'com.davelsan.xstack',
+    bundleIdentifier: 'com.anonymous.xstack',
   },
   android: {
     adaptiveIcon: {
       foregroundImage: './assets/images/adaptive-icon.png',
       backgroundColor: '#ffffff',
     },
-    package: 'com.davelsan.xstack',
+    package: 'com.anonymous.xstack',
   },
   plugins: [
     [
