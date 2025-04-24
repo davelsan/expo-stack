@@ -1,5 +1,5 @@
-<h1 style="text-align: center;">Expo Stack</h1>
-<p style="text-align: center;"><i>A light-weight Expo SDK53 starter within a monorepo structure</i></p>
+<h1 align="center">Expo Stack</h1>
+<p align="center"><i>A light-weight Expo SDK53 starter within a monorepo structure</i></p>
 
 ### Bleeding Edge
 
