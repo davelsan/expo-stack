@@ -1,6 +1,8 @@
-import { Text } from '@typography/Text';
 import { View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+
+import { Text } from '@typography/Text';
+
 import styles from './HomeView.styles';
 
 export function HomeView() {

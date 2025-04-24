@@ -1,14 +1,15 @@
-import { Text } from '@typography/Text';
 import { Link, Stack } from 'expo-router';
 import { View } from 'react-native';
 import { StyleSheet } from 'react-native-unistyles';
+
+import { Text } from '@typography/Text';
 
 export default function NotFoundScreen() {
   return (
     <>
       <Stack.Screen options={{ title: 'Oops!' }} />
       <View style={styles.container}>
-        <Text variant="largeTitle">This screen doesn't exist.</Text>
+        <Text variant="largeTitle">This screen doesn&apos;t exist.</Text>
         <Link href="/" style={styles.link}>
           Go to home screen!
         </Link>

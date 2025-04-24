@@ -1,5 +1,6 @@
-import type { ExtractFace, FontFamily } from '@theme/vars/fonts';
 import { StyleSheet, UnistylesVariants } from 'react-native-unistyles';
+
+import type { ExtractFace, FontFamily } from '@theme/vars/fonts';
 
 export type TextOptions<Family extends FontFamily> = {
   family?: Family;

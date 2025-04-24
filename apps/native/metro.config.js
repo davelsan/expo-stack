@@ -3,6 +3,7 @@
 // Learn more https://docs.expo.dev/guides/monorepos
 // Learn more https://docs.expo.io/guides/customizing-metro
 const path = require('path');
+
 const { getDefaultConfig } = require('expo/metro-config');
 const {
   wrapWithReanimatedMetroConfig,
