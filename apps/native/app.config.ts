@@ -10,19 +10,20 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   scheme: 'com.anonymous.xstack',
   userInterfaceStyle: 'automatic',
   newArchEnabled: true,
-  splash: {
-    image: './assets/images/splash.png',
-    resizeMode: 'contain',
-    backgroundColor: '#ffffff',
-  },
   ios: {
     supportsTablet: false,
     bundleIdentifier: 'com.anonymous.xstack',
+    icon: {
+      dark: './assets/images/icon-ios-dark.png',
+      light: './assets/images/icon-ios-light.png',
+      tinted: './assets/images/icon-ios-tinted.png',
+    },
   },
   android: {
     adaptiveIcon: {
       foregroundImage: './assets/images/adaptive-icon.png',
       backgroundColor: '#ffffff',
+      // backgroundImage: './assets/images/adaptive-icon-background.png',
     },
     package: 'com.anonymous.xstack',
   },
@@ -48,6 +49,31 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       },
     ],
     'expo-router',
+    [
+      'expo-splash-screen',
+      {
+        ios: {
+          image: './assets/images/splash.png',
+          resizeMode: 'contain',
+          backgroundColor: '#ffffff',
+          imageWidth: 200,
+          dark: {
+            image: './assets/images/splash-dark.png',
+            backgroundColor: '#000000',
+          },
+        },
+        android: {
+          image: './assets/images/splash.png',
+          resizeMode: 'contain',
+          backgroundColor: '#ffffff',
+          imageWidth: 150,
+          dark: {
+            image: './assets/images/splash-dark.png',
+            backgroundColor: '#000000',
+          },
+        },
+      },
+    ],
     [
       'react-native-edge-to-edge',
       {
