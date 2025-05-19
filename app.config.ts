@@ -74,6 +74,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
         },
       },
     ],
+    'expo-web-browser',
     [
       'react-native-edge-to-edge',
       {
