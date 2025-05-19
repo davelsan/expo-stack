@@ -3,6 +3,7 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
+      "@api/*": [ "./api/*" ],
       "@assets/*": [ "./assets/*" ],
       "@components/*": [ "./components/*" ],
       "@features/*": [ "./features/*" ],
