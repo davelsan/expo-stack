@@ -1,6 +1,9 @@
 import { StyleSheet } from 'react-native-unistyles';
 
 const styles = StyleSheet.create((theme) => ({
+  safeArea: {
+    flexGrow: 1,
+  },
   view: {
     flexGrow: 1,
     justifyContent: 'center',

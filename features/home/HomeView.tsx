@@ -7,10 +7,13 @@ import styles from './HomeView.styles';
 
 export function HomeView() {
   return (
-    <SafeAreaView style={{ flexGrow: 1 }}>
+    <SafeAreaView style={styles.safeArea}>
       <View style={styles.view}>
-        <Text size={40} family="Nunito" face="SemiBold">
-          Custom
+        <Text size={34} family="Nunito" face="SemiBold">
+          Nunito
+        </Text>
+        <Text size={30} family="SpaceMono" face="Regular">
+          SpaceMono
         </Text>
         <Text variant="largeTitle">Large Title</Text>
         <Text variant="title1">Title 1</Text>

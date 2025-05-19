@@ -9,13 +9,14 @@ export type TextOptions<Family extends FontFamily> = {
 };
 
 const styleSheet = StyleSheet.create((theme) => ({
-  text: <Family extends FontFamily>(options: TextOptions<Family>) => ({
+  text: <Family extends FontFamily>({
+    face,
+    family,
+    size,
+  }: TextOptions<Family>) => ({
     color: theme.colors.grayTextContrast,
-    fontSize: options.size,
-    fontFamily:
-      options.family && options.face
-        ? theme.font(options.family, options.face)
-        : undefined,
+    fontSize: size,
+    fontFamily: family ? theme.font(family, face ?? 'Regular') : undefined,
     variants: {
       align: {
         center: {
@@ -51,57 +52,57 @@ const styleSheet = StyleSheet.create((theme) => ({
       variant: {
         largeTitle: {
           fontSize: 34,
-          fontFamily: theme.font('Nunito', 'Bold'),
+          fontWeight: face ? undefined : 700,
           lineHeight: 41,
         },
         title1: {
           fontSize: 28,
-          fontFamily: theme.font('Nunito', 'Regular'),
+          fontWeight: face ? undefined : 400,
           lineHeight: 34,
         },
         title2: {
           fontSize: 22,
-          fontFamily: theme.font('Nunito', 'Regular'),
+          fontWeight: face ? undefined : 400,
           lineHeight: 28,
         },
         title3: {
           fontSize: 20,
-          fontFamily: theme.font('Nunito', 'Regular'),
+          fontWeight: face ? undefined : 400,
           lineHeight: 25,
         },
         headline: {
           fontSize: 17,
-          fontFamily: theme.font('Nunito', 'SemiBold'),
+          fontWeight: face ? undefined : 600,
           lineHeight: 22,
         },
         body: {
           fontSize: 17,
-          fontFamily: theme.font('Nunito', 'Regular'),
+          fontWeight: face ? undefined : 400,
           lineHeight: 22,
         },
         callout: {
           fontSize: 16,
-          fontFamily: theme.font('Nunito', 'Regular'),
+          fontWeight: face ? undefined : 400,
           lineHeight: 21,
         },
         subhead: {
           fontSize: 15,
-          fontFamily: theme.font('Nunito', 'Regular'),
+          fontWeight: face ? undefined : 400,
           lineHeight: 20,
         },
         footnote: {
           fontSize: 13,
-          fontFamily: theme.font('Nunito', 'Regular'),
+          fontWeight: face ? undefined : 400,
           lineHeight: 18,
         },
         caption1: {
           fontSize: 12,
-          fontFamily: theme.font('Nunito', 'Regular'),
+          fontWeight: face ? undefined : 400,
           lineHeight: 16,
         },
         caption2: {
           fontSize: 11,
-          fontFamily: theme.font('Nunito', 'Regular'),
+          fontWeight: face ? undefined : 400,
           lineHeight: 13,
         },
       },
