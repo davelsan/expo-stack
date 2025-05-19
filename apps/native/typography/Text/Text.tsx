@@ -9,9 +9,7 @@ export interface TextProps<Family extends FontFamily>
   extends ComponentPropsWithRef<typeof RNText>,
     RNTextProps,
     TextVariants,
-    TextOptions<Family> {
-  size?: number;
-}
+    TextOptions<Family> {}
 
 export function Text<Family extends FontFamily>({
   align,
