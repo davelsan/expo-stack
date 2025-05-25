@@ -28,7 +28,7 @@
 
 [`./app.config.ts`](./app.config.ts)
 [`./theme/vars/fonts.ts`](./theme/vars/fonts.ts)
-[`./features/home/HomeView.tsx`](./features/Typography/Typography.tsx)
+[`./features/Typography/Typography.tsx`](./features/Typography/Typography.tsx)
 
 ## Commands
 
