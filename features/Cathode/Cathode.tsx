@@ -19,7 +19,7 @@ import type { ShaderModule } from '@shaders/types';
 import styles from './Cathode.styles';
 
 const cathodeSkShader: ShaderModule = {
-  module: require('./Cathode.glsl'),
+  module: require('./Cathode.sksl'),
   dependencies: [remap],
 };
 
