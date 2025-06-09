@@ -9,7 +9,7 @@ export function TypographyView() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.view}>
-        <Text size={34} family="Nunito" face="SemiBold">
+        <Text color="accentText" size={34} family="Nunito" face="SemiBold">
           Nunito
         </Text>
         <Text size={30} family="SpaceMono" face="Regular">

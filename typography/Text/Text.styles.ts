@@ -1,11 +1,13 @@
 import { StyleSheet, UnistylesVariants } from 'react-native-unistyles';
 
 import type { ExtractFace, FontFamily } from '@theme/vars/fonts';
+import type { TextToken } from '@theme/tokens';
+import { applyColor } from '@theme/helpers';
 
 export type TextOptions<Family extends FontFamily> = {
-  color?: string;
-  family?: Family;
+  color?: TextToken | (string & {});
   face?: ExtractFace<Family>;
+  family?: Family;
   size?: number;
 };
 
@@ -16,7 +18,7 @@ const styleSheet = StyleSheet.create((theme) => ({
     family,
     size,
   }: TextOptions<Family>) => ({
-    color: color ?? theme.tokens.grayTextContrast,
+    color: applyColor(color, 'grayTextContrast', theme),
     fontSize: size,
     fontFamily: family ? theme.font(family, face ?? 'Regular') : undefined,
     variants: {
