@@ -13,6 +13,7 @@ export interface TextProps<Family extends FontFamily>
 
 export function Text<Family extends FontFamily>({
   align,
+  color,
   face,
   family,
   transform,
@@ -30,7 +31,7 @@ export function Text<Family extends FontFamily>({
   return (
     <RNText
       ref={ref}
-      style={[styles.text({ family, face, size }), style]}
+      style={[styles.text({ color, family, face, size }), style]}
       {...props}
     />
   );
