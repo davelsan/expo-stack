@@ -23,12 +23,12 @@ export const ThemeProvider = withUnistyles(RNThemeProvider, (theme, rt) => ({
       },
     },
     colors: {
-      background: theme.colors.grayBase,
-      border: theme.colors.accentBorder,
-      card: theme.colors.grayBase,
-      notification: theme.colors.accentSolid,
-      primary: theme.colors.grayTextContrast,
-      text: theme.colors.grayText,
+      background: theme.tokens.grayBase,
+      border: theme.tokens.accentBorder,
+      card: theme.tokens.grayBase,
+      notification: theme.tokens.accentSolid,
+      primary: theme.tokens.grayTextContrast,
+      text: theme.tokens.grayText,
     },
   },
 }));
