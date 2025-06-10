@@ -5,7 +5,7 @@
     "noUncheckedIndexedAccess": true,
     "paths": {
       "@api/*": [ "./src/api/*" ],
-      "@assets/*": [ "./assets/*" ],
+      "@assets/*": [ "./src/assets/*" ],
       "@components/*": [ "./src/components/*" ],
       "@features/*": [ "./src/features/*" ],
       "@forms/*": [ "./src/forms/*" ],

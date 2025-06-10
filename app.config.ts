@@ -6,7 +6,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   slug: 'xstack',
   version: '0.1.0',
   orientation: 'portrait',
-  icon: './assets/images/icon.png',
+  icon: './src/assets/images/icon.png',
   scheme: 'com.anonymous.xstack',
   userInterfaceStyle: 'automatic',
   newArchEnabled: true,
@@ -14,16 +14,16 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     supportsTablet: false,
     bundleIdentifier: 'com.anonymous.xstack',
     icon: {
-      dark: './assets/images/icon-ios-dark.png',
-      light: './assets/images/icon-ios-light.png',
-      tinted: './assets/images/icon-ios-tinted.png',
+      dark: './src/assets/images/icon-ios-dark.png',
+      light: './src/assets/images/icon-ios-light.png',
+      tinted: './src/assets/images/icon-ios-tinted.png',
     },
   },
   android: {
     adaptiveIcon: {
-      foregroundImage: './assets/images/adaptive-icon.png',
+      foregroundImage: './src/assets/images/adaptive-icon.png',
       backgroundColor: '#ffffff',
-      // backgroundImage: './assets/images/adaptive-icon-background.png',
+      // backgroundImage: './src/assets/images/adaptive-icon-background.png',
     },
     package: 'com.anonymous.xstack',
   },
@@ -31,7 +31,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     [
       'expo-asset',
       {
-        assets: ['./assets/images'],
+        assets: ['./src/assets/images'],
       },
     ],
     [
@@ -53,22 +53,22 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       'expo-splash-screen',
       {
         ios: {
-          image: './assets/images/splash.png',
+          image: './src/assets/images/splash.png',
           resizeMode: 'contain',
           backgroundColor: '#ffffff',
           imageWidth: 200,
           dark: {
-            image: './assets/images/splash-dark.png',
+            image: './src/assets/images/splash-dark.png',
             backgroundColor: '#000000',
           },
         },
         android: {
-          image: './assets/images/splash.png',
+          image: './src/assets/images/splash.png',
           resizeMode: 'contain',
           backgroundColor: '#ffffff',
           imageWidth: 150,
           dark: {
-            image: './assets/images/splash-dark.png',
+            image: './src/assets/images/splash-dark.png',
             backgroundColor: '#000000',
           },
         },
