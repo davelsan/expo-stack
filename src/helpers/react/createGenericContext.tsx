@@ -44,7 +44,7 @@ export function createGenericAdapter<T>() {
 
   function provideContext(adapter: T) {
     return function ContextProvider({ children }: PropsWithChildren) {
-      return <Context.Provider value={adapter}>{children}</Context.Provider>;
+      return <Context value={adapter}>{children}</Context>;
     };
   }
 
