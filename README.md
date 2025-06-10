@@ -1,5 +1,5 @@
 <h1 align="center">Expo Stack</h1>
-<p align="center"><i>Simple Expo SDK53 starter</i></p>
+<p align="center"><i>Simple Expo SDK53 examples</i></p>
 
 ### Stack
 
@@ -12,23 +12,30 @@
 - [x] [Jest](https://github.com/expo/expo/tree/main/packages/jest-expo) for unit testing.
 - [ ] [Maestro](https://github.com/mobile-dev-inc/Maestro) for UI and E2E testing.
 
-## Features
+## Examples
+
+### API Adapter (External) and Unit Tests
+- External API adapter pattern.
+- Component Unit tests using `@tanstack/query`.
+
+[`./src/api/SpaceX/`](./src/api/SpaceX/)
+[`./src/features/Astronaut/`](./src/features/Astronaut/)
 
 #### Skia Shader
 - Import GLSL files as shader modules.
 - Render an `ImageShader`.
 
-[`./hooks/useShader.ts`](./hooks/useShader.ts)
-[`./features/Cathode/Cathode.tsx`](./features/Cathode/Cathode.tsx)
+[`./src/hooks/useShader.ts`](./src/hooks/useShader.ts)
+[`./src/features/Cathode/`](./src/features/Cathode/)
 
 #### Typography
 - Embed Google Fonts with `expo-font`.
 - Platform-based naming.
-- Use custom and default faces.
+- Custom and default faces.
 
 [`./app.config.ts`](./app.config.ts)
-[`./theme/vars/fonts.ts`](./theme/vars/fonts.ts)
-[`./features/Typography/Typography.tsx`](./features/Typography/Typography.tsx)
+[`./src/theme/vars/fonts.ts`](./src/theme/vars/fonts.ts)
+[`./src/features/Typography/`](./src/features/Typography/)
 
 ## Commands
 
