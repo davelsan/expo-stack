@@ -1,5 +1,5 @@
-import { CathodeView } from '@features/Cathode';
+import { Redirect } from 'expo-router';
 
 export default function HomeScreen() {
-  return <CathodeView />;
+  return <Redirect href="/spacex" />;
 }
