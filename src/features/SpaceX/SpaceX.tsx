@@ -1,9 +1,9 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { useAstronaut } from './useAstronaut';
 import { AstronautData } from './AstronautData';
 import { AstronautError } from './AstronautError';
 import styles from './SpaceX.styles';
+import { useAstronaut } from './useAstronaut';
 
 export function SpaceXView() {
   const { data: astronaut, isError, isFetching } = useAstronaut();

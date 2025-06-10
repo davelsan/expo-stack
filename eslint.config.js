@@ -1,8 +1,8 @@
+const pluginQuery = require('@tanstack/eslint-plugin-query');
+const typescriptEslint = require('@typescript-eslint/eslint-plugin');
 const { defineConfig } = require('eslint/config');
 const expoConfig = require('eslint-config-expo/flat');
 const globals = require('globals');
-const pluginQuery = require('@tanstack/eslint-plugin-query');
-const typescriptEslint = require('@typescript-eslint/eslint-plugin');
 
 module.exports = defineConfig([
   /**
@@ -38,6 +38,11 @@ module.exports = defineConfig([
       'import/order': [
         'warn',
         {
+          alphabetize: {
+            order: 'asc',
+            caseInsensitive: true,
+          },
+          distinctGroup: true,
           'newlines-between': 'always',
           groups: ['builtin', 'external', 'parent', 'sibling', 'index'],
           pathGroups: [
@@ -47,7 +52,6 @@ module.exports = defineConfig([
               position: 'before',
             },
           ],
-          distinctGroup: true,
         },
       ],
 

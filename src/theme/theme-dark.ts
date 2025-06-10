@@ -1,4 +1,3 @@
-import { darkColors } from './vars/colors';
 import { baseTheme } from './theme-base';
 import type {
   BackgroundToken,
@@ -6,6 +5,7 @@ import type {
   SurfaceToken,
   TextToken,
 } from './tokens';
+import { darkColors } from './vars/colors';
 
 const backgroundTokens: Record<BackgroundToken, string> = {
   accentBase: darkColors.purple1,

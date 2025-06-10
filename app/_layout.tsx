@@ -1,8 +1,8 @@
 import { Stack } from 'expo-router';
 import { KeyboardProvider } from 'react-native-keyboard-controller';
 
-import { ThemeProvider } from '@providers/ThemeProvider';
 import { QueryProvider } from '@providers/QueryProvider';
+import { ThemeProvider } from '@providers/ThemeProvider';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 // void SplashScreen.preventAutoHideAsync();
