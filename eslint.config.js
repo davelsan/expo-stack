@@ -22,6 +22,18 @@ module.exports = defineConfig([
    */
   expoConfig,
   /**
+   * Configure Jest globals in relevant files.
+   * https://eslint.org/docs/latest/use/configure/language-options#predefined-global-variables
+   */
+  {
+    files: ['**/*.test.{ts,tsx}', '**/jest.setup.js'],
+    languageOptions: {
+      globals: {
+        ...globals.jest,
+      },
+    },
+  },
+  /**
    * Custom project rules
    */
   {
@@ -59,18 +71,6 @@ module.exports = defineConfig([
           ],
         },
       ],
-    },
-  },
-  /**
-   * Configure Jest globals in relevant files.
-   * https://eslint.org/docs/latest/use/configure/language-options#predefined-global-variables
-   */
-  {
-    files: ['**/*.test.{ts,tsx}', '**/jest.setup.js'],
-    languageOptions: {
-      globals: {
-        ...globals.jest,
-      },
     },
   },
 ]);

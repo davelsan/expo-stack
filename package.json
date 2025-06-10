@@ -16,6 +16,7 @@
     "lint": "eslint . --fix",
     "format": "prettier --check --write --no-error-on-unmatched-pattern ./**/*.{ts,tsx,md} ./**/*.{ts,tsx,md}",
     "test": "jest",
+    "test:watch": "jest --watchAll",
     "expo:check": "expo install --check",
     "expo:doctor": "expo-doctor --verbose",
     "expo:install": "expo install --pnpm",
@@ -61,12 +62,14 @@
     "react-native-safe-area-context": "5.4.0",
     "react-native-screens": "4.11.1",
     "react-native-svg": "^15.11.2",
-    "react-native-unistyles": "3.0.0-rc.2",
+    "react-native-unistyles": "3.0.0-rc.4",
     "react-native-web": "~0.20.0",
+    "ts-node": "^10.9.2",
     "zod": "^3.25.56"
   },
   "devDependencies": {
     "@babel/core": "^7.27.4",
+    "@testing-library/react-native": "^13.2.0",
     "@types/jest": "^29.5.14",
     "@types/react": "~19.0.14",
     "@types/react-test-renderer": "^19.1.0",
@@ -76,7 +79,6 @@
     "jest": "^29.7.0",
     "jest-expo": "53.0.7",
     "prettier": "^3.5.3",
-    "react-test-renderer": "19.1.0",
     "typescript": "~5.8.3"
   },
   "packageManager": "pnpm@10.11.0"
