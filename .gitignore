@@ -6,9 +6,14 @@ pnpm-debug.*
 dist/
 web-build/
 
+# env
+.env
+.env.development
+.env.local
+
+
 # expo
 expo-env.d.ts
-coverage/
 
 # native
 ios/
@@ -20,6 +25,9 @@ android/
 *.key
 *.mobileprovision
 *.orig.*
+
+# tests
+coverage/
 
 # macOS
 .DS_Store
