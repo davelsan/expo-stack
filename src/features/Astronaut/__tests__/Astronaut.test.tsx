@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react-native';
 
+import { AstronautView } from '../Astronaut';
 import { AstronautData } from '../AstronautData';
-import { SpaceXView } from '../SpaceX';
 
 import {
   fakeAstronaut,
@@ -10,7 +10,7 @@ import {
   fetchAstronautSuccess,
 } from './utils';
 
-describe('SpaceX', () => {
+describe('Astronaut', () => {
   it('Render Astronaut data', async () => {
     const component = render(<AstronautData astronaut={fakeAstronaut} />);
     await component.findByText(fakeAstronaut.name);
@@ -18,8 +18,8 @@ describe('SpaceX', () => {
     await component.findByText(fakeAstronaut.status);
   });
 
-  it('Render SpaceX success', async () => {
-    const component = render(<SpaceXView />, {
+  it('Render Astronaut success', async () => {
+    const component = render(<AstronautView />, {
       wrapper: fakeProviders(fetchAstronautSuccess),
     });
 
@@ -28,8 +28,8 @@ describe('SpaceX', () => {
     expect(await component.findByText(fakeAstronaut.status));
   });
 
-  it('Render SpaceX error', async () => {
-    const component = render(<SpaceXView />, {
+  it('Render Astronaut error', async () => {
+    const component = render(<AstronautView />, {
       wrapper: fakeProviders(fetchAstronautError),
     });
     expect(await component.findByText('Something went wrong'));

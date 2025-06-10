@@ -1,5 +1,5 @@
-import { SpaceXView } from '@features/SpaceX';
+import { AstronautView } from '@features/Astronaut';
 
 export default function SpaceXScreen() {
-  return <SpaceXView />;
+  return <AstronautView />;
 }
