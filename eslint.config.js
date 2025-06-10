@@ -1,6 +1,8 @@
 const { defineConfig } = require('eslint/config');
 const expoConfig = require('eslint-config-expo/flat');
 const globals = require('globals');
+const pluginQuery = require('@tanstack/eslint-plugin-query');
+const typescriptEslint = require('@typescript-eslint/eslint-plugin');
 
 module.exports = defineConfig([
   /**
@@ -13,6 +15,8 @@ module.exports = defineConfig([
       'dist/*',
       // static assets folder
       'public/*',
+      // dependencies
+      'node_modules/*',
     ],
   },
   /**
@@ -22,21 +26,13 @@ module.exports = defineConfig([
    */
   expoConfig,
   /**
-   * Configure Jest globals in relevant files.
-   * https://eslint.org/docs/latest/use/configure/language-options#predefined-global-variables
-   */
-  {
-    files: ['**/*.test.{ts,tsx}', '**/jest.setup.js'],
-    languageOptions: {
-      globals: {
-        ...globals.jest,
-      },
-    },
-  },
-  /**
    * Custom project rules
    */
   {
+    plugins: {
+      '@tanstack/query': pluginQuery,
+      '@typescript-eslint': typescriptEslint,
+    },
     rules: {
       // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/order.md
       'import/order': [
@@ -55,6 +51,13 @@ module.exports = defineConfig([
         },
       ],
 
+      '@tanstack/query/exhaustive-deps': 'warn',
+      '@tanstack/query/no-rest-destructuring': 'warn',
+      '@tanstack/query/stable-query-client': 'warn',
+      '@tanstack/query/no-unstable-deps': 'warn',
+      '@tanstack/query/infinite-query-property-order': 'warn',
+      '@tanstack/query/no-void-query-fn': 'warn',
+
       // Disable the array notation police
       '@typescript-eslint/array-type': 'off',
 
@@ -71,6 +74,30 @@ module.exports = defineConfig([
           ],
         },
       ],
+    },
+  },
+  /**
+   * Allow `require` in CommonJS files.
+   */
+  {
+    files: ['**/eslint.config.js', '**/jest.setup.js', '**/metro.config.js'],
+    plugins: {
+      '@typescript-eslint': typescriptEslint,
+    },
+    rules: {
+      '@typescript-eslint/no-require-imports': 'off',
+    },
+  },
+  /**
+   * Configure Jest globals in relevant files.
+   * https://eslint.org/docs/latest/use/configure/language-options#predefined-global-variables
+   */
+  {
+    files: ['**/*.test.{ts,tsx}', '**/jest.setup.js'],
+    languageOptions: {
+      globals: {
+        ...globals.jest,
+      },
     },
   },
 ]);
