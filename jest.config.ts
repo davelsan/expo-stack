@@ -5,7 +5,7 @@ const config: Config = {
   setupFiles: [
     './jest.setup.js',
     'react-native-unistyles/mocks',
-    './theme/unistyles.ts',
+    './src/theme/unistyles.ts',
   ],
   transformIgnorePatterns: [
     'node_modules/(?!(?:.pnpm/)?((jest-)?react-native|@react-native(-community)?|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@sentry/react-native|native-base|react-native-svg))',
