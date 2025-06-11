@@ -15,7 +15,7 @@
     "eas:update:prod": "eas update --channel production --clear-cache --environment production && pnpx sentry-expo-upload-sourcemaps dist",
     "lint": "eslint . --fix",
     "format": "prettier --check --write --no-error-on-unmatched-pattern ./**/*.{ts,tsx,md} ./**/*.{ts,tsx,md}",
-    "test:unit": "jest",
+    "test:unit": "jest --verbose",
     "test:unit:watch": "jest --watchAll",
     "expo:check": "expo install --check",
     "expo:doctor": "expo-doctor --verbose",
