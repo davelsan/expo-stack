@@ -55,6 +55,8 @@ module.exports = defineConfig([
         },
       ],
 
+      // Warn about common @tanstack/query gotchas
+      // https://tanstack.com/query/latest/docs/eslint/eslint-plugin-query
       '@tanstack/query/exhaustive-deps': 'warn',
       '@tanstack/query/no-rest-destructuring': 'warn',
       '@tanstack/query/stable-query-client': 'warn',
