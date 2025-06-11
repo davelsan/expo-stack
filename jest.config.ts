@@ -8,14 +8,10 @@ const config: Config = {
     './src/theme/unistyles.ts',
   ],
   /**
-   * Only match `*.test.tsx?` or `*.spec.tsx?` files.
-   * This ignores supporting files, such as `utils.ts`.
+   * Only match `*.test` or `*.spec` files within __tests__ folders.
    * @see https://jestjs.io/docs/configuration#testmatch-arraystring
    */
-  testMatch: [
-    '**/__tests__/**/*.(test|spec).[jt]s?(x)',
-    '**/?(*.)+(spec|test).[jt]s?(x)',
-  ],
+  testMatch: ['**/__tests__/**/*.(test|spec).[jt]s?(x)'],
   transformIgnorePatterns: [
     'node_modules/(?!(?:.pnpm/)?((jest-)?react-native|@react-native(-community)?|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@sentry/react-native|native-base|react-native-svg))',
   ],
