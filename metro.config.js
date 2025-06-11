@@ -1,7 +1,10 @@
 /* eslint-env node */
 
-// Learn more https://docs.expo.dev/guides/monorepos
-// Learn more https://docs.expo.io/guides/customizing-metro
+/**
+ * Learn more:
+ * https://docs.expo.dev/guides/customizing-metro
+ * https://docs.expo.dev/guides/monorepos
+ */
 
 const { getDefaultConfig } = require('expo/metro-config');
 const {
