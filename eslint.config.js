@@ -86,7 +86,7 @@ module.exports = defineConfig([
    * Allow `require` in CommonJS files.
    */
   {
-    files: ['**/eslint.config.js', '**/jest.setup.js', '**/metro.config.js'],
+    files: ['**/eslint.config.js', '**/jest.*.[jt]s', '**/metro.config.js'],
     plugins: {
       '@typescript-eslint': typescriptEslint,
     },

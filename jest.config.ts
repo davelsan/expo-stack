@@ -3,7 +3,7 @@ import type { Config } from 'jest';
 const config: Config = {
   preset: 'jest-expo',
   setupFiles: [
-    './jest.setup.js',
+    './jest.setup.ts',
     'react-native-unistyles/mocks',
     './src/theme/unistyles.ts',
   ],
@@ -13,8 +13,7 @@ const config: Config = {
    * @see https://jestjs.io/docs/configuration#testmatch-arraystring
    */
   testMatch: [
-    '**/__tests__/**/*.test.[jt]s?(x)',
-    '**/__tests__/**/*.spec.[jt]s?(x)',
+    '**/__tests__/**/*.(test|spec).[jt]s?(x)',
     '**/?(*.)+(spec|test).[jt]s?(x)',
   ],
   transformIgnorePatterns: [
